@@ -1,0 +1,21 @@
+PUBLIC OUTTURE
+PUBLIC OUTFALSE
+DATAS SEGMENT 'A1'
+OUTPUT2 DB "TURE!",'$'
+OUTPUT3 DB "FALSE!",'$'
+DATAS ENDS
+
+CODES SEGMENT 'C3'
+OUTTURE PROC FAR
+    LEA DX, OUTPUT2                  ;输出结果为真字符串
+    MOV AH, 09H							 
+    INT 21H
+    RET
+ENDP
+OUTFALSE PROC FAR
+    LEA DX, OUTPUT3                  ;输出结果为假字符串
+    MOV AH, 09H							 
+    INT 21H
+    RET
+ENDP
+CODES ENDS
